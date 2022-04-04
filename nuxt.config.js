@@ -9,10 +9,14 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        titleTemplate: '%s - harajuku-pets',
-        title: 'harajuku-pets',
+        titleTemplate: (titleChunk) => {
+            // If undefined or blank then we don't need the hyphen
+            return titleChunk
+                ? `${titleChunk} - Harajuku Pets`
+                : 'Harajuku Pets'
+        },
         htmlAttrs: {
-            lang: 'en',
+            lang: 'es',
         },
         meta: [
             { charset: 'utf-8' },
